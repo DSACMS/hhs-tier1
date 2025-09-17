@@ -110,13 +110,11 @@ Information about terminology and acronyms used in this documentation may be fou
 
 ### Open Source Policy
 
-We adhere to the [CMS Open Source
-Policy](https://github.com/CMSGov/cms-open-source-policy). If you have any
-questions, just [shoot us an email](mailto:opensource@cms.hhs.gov).
+We adhere to the [HHS Open Source Policy](https://www.hhs.gov/sites/default/files/hhs-open-gov-plan-v4-2016.pdf). If you have any questions, just [send us an email](mailto:cdo@hhs.gov).
 
 ### Security and Responsible Disclosure Policy
 
-_Submit a vulnerability:_ Vulnerability reports can be submitted through [Bugcrowd](https://bugcrowd.com/cms-vdp). Reports may be submitted anonymously. If you share contact information, we will acknowledge receipt of your report within 3 business days.
+_Submit a vulnerability:_ Vulnerability reports can be submitted through processes listed on the [HHS VDP Page](https://www.hhs.gov/vulnerability-disclosure-policy/index.html). 
 
 For more information about our Security, Vulnerability, and Responsible Disclosure Policies, see [SECURITY.md](SECURITY.md).
 
