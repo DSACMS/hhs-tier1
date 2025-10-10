@@ -13,7 +13,7 @@
     "usageType": "{{ cookiecutter.usage_type }}",
     "exemptionText": ""
   },
-  "organization": "Centers for Medicare & Medicaid Services",
+  "organization": "{{ cookiecutter.organization }}",
   "repositoryURL": "https://github.com/{{ cookiecutter.project_org }}/{{ cookiecutter.project_repo_name }}",
   "repositoryHost": "{{ cookiecutter.repository_host }}",
   "repositoryVisibility": "{{ cookiecutter.repository_visibility}}",
