@@ -37,7 +37,7 @@
         "downloadURL": "What is the URL where a distribution of the release can be found?",
         "disclaimerURL": "What is the URL where disclaimer language regarding the release can be found?",
         "disclaimerText": "A short paragraph that includes disclaimer language to accompany the release.",
-        "repository_visibility": "Is this project public or private",
+        "repository_visibility": "Is this project public or private?",
         "vcs": "What version control system is used?",
         "languages": "What programming language(s) is the software written in? Separate items by commas.",
         "maintenance": "How is the software maintained?",

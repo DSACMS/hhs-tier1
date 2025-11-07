@@ -1,7 +1,6 @@
 {
   "name": "{{ cookiecutter.project_name }}",
   "description": "{{ cookiecutter.description }}",
-  "longDescription": "{{ cookiecutter.long_description }}",
   "status": "{{ cookiecutter.status }}",
   "permissions": {
     "licenses": [
@@ -13,7 +12,7 @@
     "usageType": "{{ cookiecutter.usage_type }}",
     "exemptionText": ""
   },
-  "organization": "{{ cookiecutter.organization }}",
+  "organization": "U.S. Department of Health and Human Services",
   "repositoryURL": "https://github.com/{{ cookiecutter.project_org }}/{{ cookiecutter.project_repo_name }}",
   "repositoryHost": "{{ cookiecutter.repository_host }}",
   "repositoryVisibility": "{{ cookiecutter.repository_visibility}}",
@@ -34,7 +33,7 @@
     "email": "{{ cookiecutter.contact_email }}",
     "name": "{{ cookiecutter.contact_name }}"
   },
-  "feedbackMechanisms": ["{{ cookiecutter.feedback_mechanisms }}"],
+  "feedbackMechanisms": "{{ cookiecutter.feedback_mechanisms }}",
   "localisation": "{{ cookiecutter.localisation }}",
   "repositoryType": "{{ cookiecutter.repository_type }}",
   "userInput": "{{ cookiecutter.user_input }}",
