@@ -1,9 +1,12 @@
-{ 
-    "name": "",
+{
+    "name": "my-project",
+    "project_name": "my-project",
+    "project_repo_name": "my-repo",
+    "project_org": "HHS",
     "description": "A short description of the project.",
     "status": ["ideation", "development", "alpha", "beta", "release candidate", "production", "archival"],
     "license": ["CC0-1.0", "Apache-2.0", "MIT", "MPL-2.0", "GPL-2.0-only", "GPL-3.0-only", "GPL-3.0-or-later", "LGPL-2.1-only", "LGPL-3.0-only", "BSD-2-Clause", "BSD-3-Clause", "EPL-2.0", "Other"],
-    "license_URL": "",
+    "license_URL": "https://github.com/{{ cookiecutter.project_org }}/{{ cookiecutter.project_repo_name }}/blob/main/LICENSE",
     "organization": "U.S. Department of Health and Human Services",
     "version": "",
     "usage_type" : ["openSource", "governmentWideReuse", "exemptByNationalSecurity", "exemptByNationalIntelligence", "exemptByFOIA", "exemptByEAR", "exemptByITAR", "exemptByTSA", "exemptByClassifiedInformation", "exemptByPrivacyRisk", "exemptByIPRestriction", "exemptByAgencySystem", "exemptByAgencyMission", "exemptByCIO", "exemptByPolicyDate"],
@@ -21,14 +24,16 @@
     "contact_email": "",
     "contact_name": "",
     "feedback_mechanisms": "",
-    "SBOM": "",
-    "AIUseCaseID": "",
+    "sbom": "https://github.cms.gov/{{ cookiecutter.project_org }}/{{ cookiecutter.project_repo_name }}/network/dependencies",
+    "ai_use_case_id": "0",
    "__prompts__": {
-        "name": "What is the name of the project or software?",
+        "project_name": "What is the name of the project or software?",
+        "project_repo_name": "What is the name of the repository, where the project is hosted?",
+        "project_org": "What HHS GitHub organization is it under?",
         "description": "Provide a short description of the software. It should be a single line containing a single sentence. Maximum 150 characters are allowed.",
         "status": "What is the status of the project?",
         "license": "What license is the project under?",
-        "license_URL": "What is the URL for the liscence of this project?",
+        "license_URL": "What is the URL for the license of this project?",
         "organization": "What is the organization or component within the agency to which the releases listed belong. For example, '18F' or 'Navy'.",
         "version": "What is the version for this release. For example, '1.0.0'.",
         "usage_type": "What is the permissioned usage for this release? For more information on each option, visit github.com/DSACMS/gov-codejson",
@@ -46,7 +51,7 @@
         "contact_name": "A point of contact is needed for the project. What is the name of the point of contact?",
         "tags": "Provide a list of tags to describe the software for search. Separate items by commas.",
         "feedback_mechanisms": "What is the method a repository receives feedback from the community? (e.g. URL to GitHub repository issues page, website, email)",
-        "SBOM": "Link of the upstream repositories and dependencies used, in the form of a Software Bill of Materials/SBOM. If the software does not have a SBOM, enter 'None'. (i.e. Github provides an SBOM: https://github.com/$ORG_NAME/$REPO_NAME/network/dependencies)",
-        "AIUseCaseID": "The software's ID in the AI Use Case Inventory. If the software is not currently listed in the inventory, enter '0'."
+        "sbom": "Link of the upstream repositories and dependencies used, in the form of a Software Bill of Materials/SBOM. If the software does not have a SBOM, enter 'None'. (i.e. Github provides an SBOM: https://github.com/$ORG_NAME/$REPO_NAME/network/dependencies)",
+        "ai_use_case_id": "The software's ID in the AI Use Case Inventory. If the software is not currently listed in the inventory, enter '0'."
     }
 }
