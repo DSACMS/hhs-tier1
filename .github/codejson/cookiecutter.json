@@ -1,5 +1,4 @@
 {
-    "name": "my-project",
     "project_name": "my-project",
     "project_repo_name": "my-repo",
     "project_org": "HHS",
@@ -49,7 +48,7 @@
         "contract_number": "What is the contractor number of the project?",
         "contact_email": "What is the email for. the point of contact?",
         "contact_name": "A point of contact is needed for the project. What is the name of the point of contact?",
-        "tags": "Provide a list of tags to describe the software for search. Separate items by commas.",
+        "tags": "Provide a list of tags to describe the software for search, separate items by commas.",
         "feedback_mechanisms": "What is the method a repository receives feedback from the community? (e.g. URL to GitHub repository issues page, website, email)",
         "sbom": "Link of the upstream repositories and dependencies used, in the form of a Software Bill of Materials/SBOM. If the software does not have a SBOM, enter 'None'. (i.e. Github provides an SBOM: https://github.com/$ORG_NAME/$REPO_NAME/network/dependencies)",
         "ai_use_case_id": "The software's ID in the AI Use Case Inventory. If the software is not currently listed in the inventory, enter '0'."

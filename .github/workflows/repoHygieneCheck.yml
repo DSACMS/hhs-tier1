@@ -29,7 +29,7 @@ jobs:
           fi
           
           # Check if initialization label exists
-          has_label=$(gh label list --json project_name | jq '.[] | select(.project_name=="repolinter-initialized")')
+          has_label=$(gh label list --json name | jq '.[] | select(.name=="repolinter-initialized")')
 
           if [[ -z "$has_label" ]]; then
             # First time - create label and allow run

@@ -9,7 +9,6 @@ Follow the instructions below to generate your repository's `code.json` file usi
 1. In `cookiecutter.json`, please fill in the values for the following fields:
   - `project_name`
   - `project_repo_name`
-  - `project_org`
 
 2. In the `.github` directory, run the following command:
 ```
