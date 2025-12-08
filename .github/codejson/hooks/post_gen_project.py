@@ -84,13 +84,14 @@ def update_code_json(json_file_path):
         del data['permissions']['exemptionText']
 
     # Format multi-select options
-    multi_select_fields = ["platforms", "categories", "languages", "tags", "feedbackMechanisms", "projects", "systems", "upstream", "subsetInHealthcare", "userType"]
+    multi_select_fields = ["languages", "tags"]
     for field in multi_select_fields:
         data[field] = format_multi_select_fields(data[field][0])
 
     # Format integer fields
-    if data['reuseFrequency']['forks'].isdigit():
-        data['reuseFrequency']['forks'] = int(data['reuseFrequency']['forks'])
+    if 'reuseFrequency' in data and isinstance(data['reuseFrequency'], str):
+        if data['reuseFrequency'].isdigit():
+            data['reuseFrequency'] = int(data['reuseFrequency'])
 
     # Update the JSON 
     with open(json_file_path, 'w') as file:

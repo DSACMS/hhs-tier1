@@ -16,6 +16,7 @@
   },
   "organization": "U.S. Department of Health and Human Services",
   "repositoryURL": "https://github.com/{{ cookiecutter.project_org }}/{{ cookiecutter.project_repo_name }}",
+  "reuseFrequency": "{{ cookiecutter.reuseFrequency }}",
   "homepageURL": "",
   "downloadURL": "",
   "disclaimerURL": "",
@@ -33,5 +34,5 @@
   "feedbackMechanisms": "{{ cookiecutter.feedback_mechanisms }}",
   "SBOM": "{{ cookiecutter.sbom }}",
   "AIUseCaseID": "{{ cookiecutter.ai_use_case_id }}",
-  "maturityModelTier": 1
+  "maturityModelTier": "1"
 }
