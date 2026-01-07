@@ -89,9 +89,17 @@ def update_code_json(json_file_path):
         data[field] = format_multi_select_fields(data[field][0])
 
     # Format integer fields
-    if 'reuseFrequency' in data and isinstance(data['reuseFrequency'], str):
-        if data['reuseFrequency'].isdigit():
-            data['reuseFrequency'] = int(data['reuseFrequency'])
+    # if 'reuseFrequency' in data and isinstance(data['reuseFrequency'], str):
+    #     if data['reuseFrequency'].isdigit():
+    #         data['reuseFrequency'] = int(data['reuseFrequency'])
+
+    if data['reuseFrequency']['forks'].isdigit():
+        data['reuseFrequency']['forks'] = int(data['reuseFrequency']['forks'])
+    if data['reuseFrequency']['clones'].isdigit():
+        data['reuseFrequency']['clones'] = int(data['reuseFrequency']['clones'])
+    
+    data['localisation'] = eval(data['localisation'])
+    data['userInput'] = eval(data['userInput'])
 
     # Update the JSON 
     with open(json_file_path, 'w') as file:
