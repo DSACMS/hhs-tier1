@@ -39,5 +39,5 @@
   "userInput": "{{ cookiecutter.user_input }}",
   "SBOM": "{{ cookiecutter.sbom }}",
   "AIUseCaseID": "{{ cookiecutter.ai_use_case_id }}",
-  "maturityModelTier": 1
+  "maturityModelTier": "5"
 }
