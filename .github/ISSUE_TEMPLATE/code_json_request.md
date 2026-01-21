@@ -31,7 +31,6 @@ Thank you for helping maintain accurate code.json information for this project! 
 - [ ] date
 - [ ] tags
 - [ ] contact information
-- [ ] localisation
 - [ ] repositoryType
 - [ ] fismaLevel
 - [ ] group

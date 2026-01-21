@@ -31,11 +31,10 @@
   "contractNumber": "{{ cookiecutter.contract_number }}",
   "tags": [ "{{ cookiecutter.tags }}" ],
   "contact": {
-    "email": "{{ cookiecutter.contact_email }}",
-    "name": "{{ cookiecutter.contact_name }}"
+    "name": "{{ cookiecutter.contact_name }}",
+    "email": "{{ cookiecutter.contact_email }}"
   },
   "feedbackMechanisms": "{{ cookiecutter.feedback_mechanisms }}",
-  "localisation": "{{ cookiecutter.localisation }}",
   "userInput": "{{ cookiecutter.user_input }}",
   "SBOM": "{{ cookiecutter.sbom }}",
   "AIUseCaseID": "{{ cookiecutter.ai_use_case_id }}",
