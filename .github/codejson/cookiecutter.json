@@ -25,7 +25,6 @@
     "contact_name": "",
     "contact_email": "",
     "feedback_mechanisms": "",
-    "user_input": [true, false],
     "sbom": "https://github.cms.gov/{{ cookiecutter.project_org }}/{{ cookiecutter.project_repo_name }}/network/dependencies",
     "ai_use_case_id": "0",
    "__prompts__": {
@@ -55,7 +54,6 @@
         "contact_email": "What is the email for the point of contact?",
         "tags": "Provide a list of tags to describe the software for search, separate items by commas.",
         "feedback_mechanisms": "What is the method a repository receives feedback from the community? (e.g. URL to GitHub repository issues page, website, email)",
-        "user_input": "Does the project accept user input? (e.g. allows user to query a database, allows login by users, upload files, etc.)",
         "sbom": "Link of the upstream repositories and dependencies used, in the form of a Software Bill of Materials/SBOM. If the software does not have a SBOM, enter 'None'. (i.e. Github provides an SBOM: https://github.com/$ORG_NAME/$REPO_NAME/network/dependencies)",
         "ai_use_case_id": "The software's ID in the AI Use Case Inventory. If the software is not currently listed in the inventory, enter '0'."
     }

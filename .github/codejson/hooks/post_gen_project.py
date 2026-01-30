@@ -97,8 +97,6 @@ def update_code_json(json_file_path):
         data['reuseFrequency']['forks'] = int(data['reuseFrequency']['forks'])
     if data['reuseFrequency']['clones'].isdigit():
         data['reuseFrequency']['clones'] = int(data['reuseFrequency']['clones'])
-    
-    data['userInput'] = eval(data['userInput'])
 
     # Update the JSON 
     with open(json_file_path, 'w') as file:

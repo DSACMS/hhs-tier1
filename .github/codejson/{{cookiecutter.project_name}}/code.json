@@ -35,7 +35,6 @@
     "email": "{{ cookiecutter.contact_email }}"
   },
   "feedbackMechanisms": "{{ cookiecutter.feedback_mechanisms }}",
-  "userInput": "{{ cookiecutter.user_input }}",
   "SBOM": "{{ cookiecutter.sbom }}",
   "AIUseCaseID": "{{ cookiecutter.ai_use_case_id }}",
   "maturityModelTier": 1
