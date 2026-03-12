@@ -115,7 +115,7 @@ def main():
             shutil.rmtree(dir_name)
 
         # Get the project name from cookiecutter
-        sub_project_dir = "{{cookiecutter.project_name}}"
+        sub_project_dir = "{{cookiecutter.name}}"
         codejson_file = "code.json"
         project_root_dir = os.path.abspath('..')
 
