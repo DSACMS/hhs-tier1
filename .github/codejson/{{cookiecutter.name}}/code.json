@@ -23,10 +23,10 @@
   "disclaimerURL": "",
   "disclaimerText": "",
   "repositoryVisibility": "{{ cookiecutter.repository_visibility}}",
-  "vcs": ["{{ cookiecutter.vcs }}"],
+  "vcs": "{{ cookiecutter.vcs }}",
   "languages": [ "{{ cookiecutter.languages }}" ],
   "maintenance": "{{ cookiecutter.maintenance }}",
-  "contractNumber": "{{ cookiecutter.contract_number }}",
+  "contractNumber": ["{{ cookiecutter.contract_number }}"],
   "SBOM": "{{ cookiecutter.sbom }}",
   "tags": [ "{{ cookiecutter.tags }}" ],
   "contact": {
