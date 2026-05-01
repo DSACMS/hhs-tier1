@@ -77,16 +77,40 @@ def update_code_json(json_file_path):
         data['laborHours'] = None
 
     # Check if usageType is an exemption
-    if data['permissions']['usageType'].startswith('exempt'):
-        exemption_text = prompt_exemption_text(data['permissions']['usageType'])
-        data['permissions']['exemptionText'] = exemption_text
+    usage_type = data['permissions']['usageType']
+
+    if isinstance(usage_type, list):
+        if any(item.startswith('exempt') for item in usage_type):
+            exemption_text = prompt_exemption_text(usage_type)
+            data['permissions']['exemptionText'] = exemption_text
     else:
-        del data['permissions']['exemptionText']
+        if usage_type.startswith('exempt'):
+            del data['permissions']['exemptionText']
+
+
+    # if data['permissions']['usageType'].startswith('exempt'):
+    #     exemption_text = prompt_exemption_text(data['permissions']['usageType'])
+    #     data['permissions']['exemptionText'] = exemption_text
+    # else:
+    #     del data['permissions']['exemptionText']
 
     # Format multi-select options
     multi_select_fields = ["languages", "tags"]
     for field in multi_select_fields:
         data[field] = format_multi_select_fields(data[field][0])
+
+    # Handle contract number field
+    contract_number_raw = data.get('contract_number', '')
+    if isinstance(contract_number_raw, list):
+        contract_number_raw = contract_number_raw[0] if contract_number_raw else ''
+
+    contract_number_raw = contract_number_raw.strip()
+
+    if contract_number_raw:
+        data['contract_number'] = [contract.strip() for contract in contract_number_raw.split(",") if contract.strip()]
+        # data['contract_number'] = entries if len(entries) > 1 else entries[0]
+    else:
+        data['contract_number'] = []
 
     # Format integer fields
     # if 'reuseFrequency' in data and isinstance(data['reuseFrequency'], str):
