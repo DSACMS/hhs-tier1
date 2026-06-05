@@ -9,7 +9,7 @@
         "URL": "{{cookiecutter.license_URL}}"
       }
     ],
-    "usageType": ["{{ cookiecutter.usage_type }}"],
+    "usageType": "{{ cookiecutter.usage_type }}",
     "exemptionText": ""
   },
   "organization": "U.S. Department of Health and Human Services",
@@ -24,11 +24,11 @@
   "disclaimerText": "",
   "repositoryVisibility": "{{ cookiecutter.repository_visibility}}",
   "vcs": "{{ cookiecutter.vcs }}",
-  "languages": [ "{{ cookiecutter.languages }}" ],
+  "languages":  "{{ cookiecutter.languages }}" ,
   "maintenance": "{{ cookiecutter.maintenance }}",
-  "contractNumber": ["{{ cookiecutter.contract_number }}"],
+  "contractNumber": "{{ cookiecutter.contract_number }}",
   "SBOM": "{{ cookiecutter.sbom }}",
-  "tags": [ "{{ cookiecutter.tags }}" ],
+  "tags":  "{{ cookiecutter.tags }}" ,
   "contact": {
     "name": "{{ cookiecutter.contact_name }}",
     "email": "{{ cookiecutter.contact_email }}"

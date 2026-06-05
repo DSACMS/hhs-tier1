@@ -79,43 +79,31 @@ def update_code_json(json_file_path):
     # Check if usageType is an exemption
     usage_type = data['permissions']['usageType']
 
-    if isinstance(usage_type, list):
-        if any(item.startswith('exempt') for item in usage_type):
-            exemption_text = prompt_exemption_text(usage_type)
-            data['permissions']['exemptionText'] = exemption_text
+    # Normalize to list
+    if isinstance(usage_type, str):
+        usage_type = [u.strip() for u in usage_type.split(',')]
+        data['permissions']['usageType'] = usage_type
+
+    if any(item.startswith('exempt') for item in usage_type):
+        exemption_text = prompt_exemption_text(usage_type)
+        data['permissions']['exemptionText'] = exemption_text
     else:
-        if usage_type.startswith('exempt'):
-            del data['permissions']['exemptionText']
-
-
-    # if data['permissions']['usageType'].startswith('exempt'):
-    #     exemption_text = prompt_exemption_text(data['permissions']['usageType'])
-    #     data['permissions']['exemptionText'] = exemption_text
-    # else:
-    #     del data['permissions']['exemptionText']
+        data['permissions'].pop('exemptionText', None)
 
     # Format multi-select options
     multi_select_fields = ["languages", "tags"]
     for field in multi_select_fields:
-        data[field] = format_multi_select_fields(data[field][0])
+        val = data[field]
+        if isinstance(val, list):
+            val = val[0]
+        data[field] = format_multi_select_fields(val)
 
     # Handle contract number field
-    contract_number_raw = data.get('contract_number', '')
+    contract_number_raw = data.get('contractNumber', '')
     if isinstance(contract_number_raw, list):
         contract_number_raw = contract_number_raw[0] if contract_number_raw else ''
-
     contract_number_raw = contract_number_raw.strip()
-
-    if contract_number_raw:
-        data['contract_number'] = [contract.strip() for contract in contract_number_raw.split(",") if contract.strip()]
-        # data['contract_number'] = entries if len(entries) > 1 else entries[0]
-    else:
-        data['contract_number'] = []
-
-    # Format integer fields
-    # if 'reuseFrequency' in data and isinstance(data['reuseFrequency'], str):
-    #     if data['reuseFrequency'].isdigit():
-    #         data['reuseFrequency'] = int(data['reuseFrequency'])
+    data['contractNumber'] = [c.strip() for c in contract_number_raw.split(",") if c.strip()] if contract_number_raw else []
 
     if data['reuseFrequency']['forks'].isdigit():
         data['reuseFrequency']['forks'] = int(data['reuseFrequency']['forks'])
