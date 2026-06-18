@@ -77,20 +77,38 @@ def update_code_json(json_file_path):
         data['laborHours'] = None
 
     # Check if usageType is an exemption
-    if data['permissions']['usageType'].startswith('exempt'):
-        exemption_text = prompt_exemption_text(data['permissions']['usageType'])
+    usage_type = data['permissions']['usageType']
+
+    # Normalize to list
+    if isinstance(usage_type, str):
+        usage_type = [u.strip() for u in usage_type.split(',')]
+        data['permissions']['usageType'] = usage_type
+
+    if any(item.startswith('exempt') for item in usage_type):
+        exemption_text = prompt_exemption_text(usage_type)
         data['permissions']['exemptionText'] = exemption_text
     else:
-        del data['permissions']['exemptionText']
+        data['permissions'].pop('exemptionText', None)
 
     # Format multi-select options
-    multi_select_fields = ["platforms", "categories", "languages", "tags", "feedbackMechanisms", "projects", "systems", "upstream", "subsetInHealthcare", "userType"]
+    multi_select_fields = ["languages", "tags"]
     for field in multi_select_fields:
-        data[field] = format_multi_select_fields(data[field][0])
+        val = data[field]
+        if isinstance(val, list):
+            val = val[0]
+        data[field] = format_multi_select_fields(val)
 
-    # Format integer fields
+    # Handle contract number field
+    contract_number_raw = data.get('contractNumber', '')
+    if isinstance(contract_number_raw, list):
+        contract_number_raw = contract_number_raw[0] if contract_number_raw else ''
+    contract_number_raw = contract_number_raw.strip()
+    data['contractNumber'] = [c.strip() for c in contract_number_raw.split(",") if c.strip()] if contract_number_raw else []
+
     if data['reuseFrequency']['forks'].isdigit():
         data['reuseFrequency']['forks'] = int(data['reuseFrequency']['forks'])
+    if data['reuseFrequency']['clones'].isdigit():
+        data['reuseFrequency']['clones'] = int(data['reuseFrequency']['clones'])
 
     # Update the JSON 
     with open(json_file_path, 'w') as file:
@@ -109,7 +127,7 @@ def main():
             shutil.rmtree(dir_name)
 
         # Get the project name from cookiecutter
-        sub_project_dir = "{{cookiecutter.project_name}}"
+        sub_project_dir = "{{cookiecutter.name}}"
         codejson_file = "code.json"
         project_root_dir = os.path.abspath('..')
 

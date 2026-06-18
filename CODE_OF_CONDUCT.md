@@ -1,4 +1,4 @@
-# {{ cookiecutter.project_name }} Code of Conduct
+# {{ cookiecutter.name }} Code of Conduct
 
 ## HHS Open Data Values
 HHS is dedicated to providing a safe, harassment-free, positive environment for everyone, regardless of race, ethnicity, sex, sexual orientation, religion, or disability. 
